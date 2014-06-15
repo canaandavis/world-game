@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope "api" do
-    resources :heroes, only: [:index, :show]
+    resources :heroes, only: [:index, :show], defaults: { format: :json }
     resources :scenarios, only: [:index, :show]
   end
 

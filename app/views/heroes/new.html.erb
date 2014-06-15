@@ -1,0 +1,24 @@
+<%= @message %>
+
+<%= form_tag("/heroes", method: "post") do %>
+
+  <%= label_tag("hero[name]", "Name:") %><br>
+  <%= text_field_tag("hero[name]") %><br>
+
+  <%= label_tag("hero[quote]", "Quote:") %><br>
+  <%= text_field_tag("hero[quote]") %><br>
+
+  <%= label_tag("hero[strength]", "strength:") %><br>
+  <%= text_field_tag("hero[strength]") %><br>
+
+  <%= label_tag("hero[intellect]", "intellect:") %><br>
+  <%= text_field_tag("hero[intellect]") %><br>
+
+  <%= label_tag("hero[agility]", "agility:") %><br>
+  <%= text_field_tag("hero[agility]") %><br>
+
+  <%= label_tag("hero[dexterity]", "dexterity:") %><br>
+  <%= text_field_tag("hero[dexterity]") %><br>
+
+  <%= submit_tag("Submit") %>
+<% end %>
