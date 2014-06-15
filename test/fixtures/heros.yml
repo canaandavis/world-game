@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  quote: MyText
+  strength: 1
+  intellect: 1
+  dexterity: 1
+  agility: 1
+
+two:
+  name: MyString
+  quote: MyText
+  strength: 1
+  intellect: 1
+  dexterity: 1
+  agility: 1
