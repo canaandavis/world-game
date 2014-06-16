@@ -18,7 +18,7 @@ heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', functi
 
 }]);
 
-heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFactory', function($scope, $routeParams, HeroFactory){
+heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFactory', 'LocalStorageFactory', function($scope, $routeParams, HeroFactory, LocalStorageFactory){
   $scope.help = "pageHeroeShow";
   $scope.params = $routeParams;
 
@@ -27,6 +27,11 @@ heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFacto
   var id = $routeParams.id;
   HeroFactory.getHero(id).then(function(request){
     $scope.hero = request.data;
+
+    if (!$scope.hero.local) {
+      console.log('hi');
+      LocalStorageFactory.addLocalStorage('heroes', $scope.hero);
+    }
   });
 
 }]);

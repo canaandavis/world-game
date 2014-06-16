@@ -30,21 +30,65 @@ heroesApp.config(function($routeProvider){
 
 // Factory =============================
 
+// Factory to return all Heroes
+
 heroesApp.factory('HeroesFactory', ['$http', function($http){
   factory = {};
   factory.getHeroes = function(){
     var request = $http.get('/api/heroes');
-    return request;
+    return request.data;
   }
   return factory;
 }]);
 
-heroesApp.factory('HeroFactory', ['$http', function($http){
+// Factory to return single hero
+
+heroesApp.factory('HeroFactory', ['$http', 'LocalStorageFactory', '$q', function($http, LocalStorageFactory, $q){
   factory = {};
   factory.getHero = function(id){
-    var request = $http.get('/api/heroes/' + id);
-    return request;
+    var heroLocal = LocalStorageFactory.getLocalStorage('heroes');
+    if (heroLocal[id]) {
+      var myPromise = $q.defer();
+
+      heroLocal[id].local = "true";
+      myPromise.resolve({
+        data: heroLocal[id]
+      });
+      return myPromise.promise;
+    }
+    else {
+      var request = $http.get('/api/heroes/' + id);
+      return request;
+    }
+
   }
   return factory;
+}]);
+
+// Factory to return localStorage item
+
+heroesApp.factory('LocalStorageFactory', [function(){
+  factory = {};
+
+  factory.getLocalStorage = function(item) {
+    var itemLocal = localStorage.getItem(item);
+    if (itemLocal) {
+      return JSON.parse(itemLocal);
+    }
+    else {
+      localStorage.setItem(item, JSON.stringify({}));
+      return JSON.parse(localStorage.getItem(item));
+    }
+  };
+
+  factory.addLocalStorage = function(item, object) {
+    var itemLocal = this.getLocalStorage(item);
+    console.log(itemLocal);
+    itemLocal[object.id] = object;
+    localStorage.setItem(item, JSON.stringify(itemLocal));
+  };
+
+  return factory;
+
 }])
 
