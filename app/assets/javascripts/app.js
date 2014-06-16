@@ -14,7 +14,7 @@ heroesApp.config(function($routeProvider){
       templateUrl: '../templates/page-index-heroes.html',
       controller: 'indexHeroesController'
     })
-    .when('/show', {
+    .when('/show/:id', {
       templateUrl: '../templates/page-show-hero.html',
       controller: 'showHeroController'
     })
@@ -34,6 +34,15 @@ heroesApp.factory('HeroesFactory', ['$http', function($http){
   factory = {};
   factory.getHeroes = function(){
     var request = $http.get('/api/heroes');
+    return request;
+  }
+  return factory;
+}]);
+
+heroesApp.factory('HeroFactory', ['$http', function($http){
+  factory = {};
+  factory.getHero = function(id){
+    var request = $http.get('/api/heroes/' + id);
     return request;
   }
   return factory;

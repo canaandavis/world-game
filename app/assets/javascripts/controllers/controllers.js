@@ -1,34 +1,40 @@
 // Controllers ========================
 
 heroesApp.controller('splashController', ['$scope', function($scope){
-  $scope.help = "SPLASH";
+  $scope.help = "pageSplasy";
 }]);
 
 heroesApp.controller('introController', ['$scope', function($scope){
-  $scope.help = "INTRO";
+  $scope.help = "pageIntro";
 }]);
 
 heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', function($scope, HeroesFactory){
-  $scope.help = "Heroes Index";
+  $scope.help = "pageHeroesIndex";
 
   // Return list of all heroes
-
-  (function(){
-    HeroesFactory.getHeroes().then(function(request){
-      $scope.heroes = request.data;
-    })
-  })();
+  HeroesFactory.getHeroes().then(function(request){
+    $scope.heroes = request.data;
+  });
 
 }]);
 
-heroesApp.controller('showHeroController', ['$scope', function($scope){
-  $scope.help = "Hero Show";
+heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFactory', function($scope, $routeParams, HeroFactory){
+  $scope.help = "pageHeroeShow";
+  $scope.params = $routeParams;
+
+  // Return Hero
+
+  var id = $routeParams.id;
+  HeroFactory.getHero(id).then(function(request){
+    $scope.hero = request.data;
+  });
+
 }]);
 
 heroesApp.controller('playGameController', ['$scope', function($scope){
-  $scope.help = "Play Game";
+  $scope.help = "pagePlayGame";
 }]);
 
 heroesApp.controller('endGameController', ['$scope', function($scope){
-  $scope.help = "End Game";
+  $scope.help = "pageEndGame";
 }]);
