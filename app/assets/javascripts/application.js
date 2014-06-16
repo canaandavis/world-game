@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= requore bootstrap.min
+//= require bootstrap.min
+
+//= require angular.min
+//= require app
