@@ -1,0 +1,12 @@
+<%= @message %>
+
+<%= form_tag("/scenarios", method: "post") do %>
+
+  <%= label_tag("scenario[name]", "Name:") %><br>
+  <%= text_field_tag("scenario[name]") %><br>
+
+  <%= label_tag("scenario[weakness]", "Weakness:") %><br>
+  <%= text_field_tag("scenario[weakness]") %><br>
+
+  <%= submit_tag("Submit") %>
+<% end %>
