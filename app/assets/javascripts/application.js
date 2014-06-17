@@ -19,4 +19,9 @@
 //= require factories/localstorage-factories
 //= require factories/scenarios-factories
 //= require factories/heroes-factories
-//= require controllers/controllers
+//= require controllers/splashController
+//= require controllers/introController
+//= require controllers/introHeroesController
+//= require controllers/showHeroController
+//= require controllers/playGameController
+//= require controllers/endGameController
