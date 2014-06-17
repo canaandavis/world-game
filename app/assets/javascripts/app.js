@@ -31,6 +31,10 @@ heroesApp.config(function($routeProvider){
       templateUrl: '../templates/page-end-game.html',
       controller: 'endGameController'
     })
+    .otherwise({
+      templateUrl: '../templates/page-splash.html',
+      controller: 'splashController'
+    })
 });
 
 heroesApp.controller('masterController',

@@ -17,9 +17,9 @@
 </head>
 <body ng-app="heroesApp">
 
-<div ng-view class="page">
-  <%= yield %>
-</div>
+  <div class="page {{pageClass}}" ng-view >
+    <%= yield %>
+  </div>
 
 </body>
 </html>

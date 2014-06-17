@@ -1,6 +1,7 @@
 class ScenariosController < ApplicationController
   def show
-    @scenario = Scenario.find_by(params[:id])
+    @scenario = Scenario.find_by(id: params[:id])
+    puts params[:id]
     render json: @scenario
   end
 

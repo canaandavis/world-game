@@ -1,3 +1,25 @@
-<div ng-repeat='scenario in scenarios'>
-  {{scenario.name}}
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <h1>SAVE THE WORLD</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <select class="form-control" id="select-custom" ng-model="change" ng-options='scenario.name for scenario in scenarios'>
+      <option value="" disabled>Select</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-5 col-md-2 start-row">
+      <a href="#intro/{{change.id}}" id="start-button">Start</a>
+    </div>
+  </div>
+
 </div>
+
+

@@ -12,4 +12,7 @@
  *
  *= require_self
  *= require bootstrap.min
+ *= require main
+ *= require view-styles/pageSplash
+ *= require view-styles/pageIntro
  */

@@ -7,6 +7,7 @@ heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function(
     return request;
   };
   factory.getScenario = function(id){
+    console.log("hello");
     var scenarioLocal = LocalStorageFactory.getLocalStorage('scenarios');
     if (scenarioLocal[id]) {
       return LocalStorageFactory.mockPromiseReturn(scenarioLocal[id]);

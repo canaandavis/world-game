@@ -1,23 +1,29 @@
 // Splash Page Controller
 
 heroesApp.controller('splashController', ['$scope', 'ScenariosFactory', function($scope, ScenariosFactory){
-  $scope.help = "pageSplash";
+  $scope.pageClass = "pageSplash";
   ScenariosFactory.getScenarios().then(function(request){
     $scope.scenarios = request.data;
+    $scope.scenarioId = false;
+    $scope.update = function(){
+      // console.log(change);
+    };
   })
 }]);
 
 // Intro Page Controller
 
 heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routeParams', '$rootScope', 'LocalStorageFactory', function($scope, ScenariosFactory, $routeParams, $rootScope, LocalStorageFactory){
-  $scope.help = "pageIntro";
+  $scope.pageClass = "pageIntro";
   $scope.params = $routeParams;
 
   // Define Scenario
 
   var id = $routeParams.id;
+  console.log(id);
   ScenariosFactory.getScenario(id).then(function(request){
     $rootScope.scenario = request.data;
+    console.log(request.data.local)
 
     if (!$rootScope.scenario.local) {
       console.log('hi');
@@ -30,7 +36,7 @@ heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routePa
 // Index Heros Controller
 
 heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', function($scope, HeroesFactory){
-  $scope.help = "pageHeroesIndex";
+  $scope.pageClass = "pageHeroesIndex";
 
   // Return list of all heroes
   HeroesFactory.getHeroes().then(function(request){
@@ -42,7 +48,7 @@ heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', functi
 // Show singel hero controller
 
 heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFactory', 'LocalStorageFactory', function($scope, $routeParams, HeroFactory, LocalStorageFactory){
-  $scope.help = "pageHeroeShow";
+  $scope.pageClass = "pageHeroeShow";
   $scope.params = $routeParams;
 
   // Return Hero
@@ -62,11 +68,11 @@ heroesApp.controller('showHeroController', ['$scope', '$routeParams', 'HeroFacto
 // Play game controller
 
 heroesApp.controller('playGameController', ['$scope', function($scope){
-  $scope.help = "pagePlayGame";
+  $scope.pageClass = "pagePlayGame";
 }]);
 
 // End game controller
 
 heroesApp.controller('endGameController', ['$scope', function($scope){
-  $scope.help = "pageEndGame";
+  $scope.pageClass = "pageEndGame";
 }]);

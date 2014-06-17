@@ -1,0 +1,31 @@
+// Font definations
+
+@font-face {
+  font-family: 'Press2Play';
+  src: url('PressStart2P-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.page {
+  background: #000 url('city.gif');
+  bottom: 0;
+  padding-top: 200px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  color: white;
+  font-family: 'Press2Play';
+  h1 {
+    font-size: 60px;
+  }
+  a {
+    margin-top: 50px;
+  }
+}
+
+
+
+
