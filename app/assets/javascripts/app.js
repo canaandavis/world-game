@@ -1,12 +1,17 @@
 var heroesApp = angular.module('heroesApp', ['ngRoute']);
 
+heroesApp.run(['$rootScope',function($rootScope){
+  $rootScope.scenario = false,
+  $rootScope.team = [];
+}]);
+
 heroesApp.config(function($routeProvider){
   $routeProvider
     .when('/splash', {
       templateUrl: '../templates/page-splash.html',
       controller: 'splashController'
     })
-    .when('/intro', {
+    .when('/intro/:id', {
       templateUrl: '../templates/page-intro.html',
       controller: 'introController'
     })
@@ -28,67 +33,9 @@ heroesApp.config(function($routeProvider){
     })
 });
 
-// Factory =============================
+heroesApp.controller('masterController',
+  ['heroesApp', '$scope', 'ScenariosFactory','$routeParams'
+  , '$rootScope', 'LocalStorageFactory', 'HeroFactory']);
 
-// Factory to return all Heroes
 
-heroesApp.factory('HeroesFactory', ['$http', function($http){
-  factory = {};
-  factory.getHeroes = function(){
-    var request = $http.get('/api/heroes');
-    return request.data;
-  }
-  return factory;
-}]);
-
-// Factory to return single hero
-
-heroesApp.factory('HeroFactory', ['$http', 'LocalStorageFactory', '$q', function($http, LocalStorageFactory, $q){
-  factory = {};
-  factory.getHero = function(id){
-    var heroLocal = LocalStorageFactory.getLocalStorage('heroes');
-    if (heroLocal[id]) {
-      var myPromise = $q.defer();
-
-      heroLocal[id].local = "true";
-      myPromise.resolve({
-        data: heroLocal[id]
-      });
-      return myPromise.promise;
-    }
-    else {
-      var request = $http.get('/api/heroes/' + id);
-      return request;
-    }
-
-  }
-  return factory;
-}]);
-
-// Factory to return localStorage item
-
-heroesApp.factory('LocalStorageFactory', [function(){
-  factory = {};
-
-  factory.getLocalStorage = function(item) {
-    var itemLocal = localStorage.getItem(item);
-    if (itemLocal) {
-      return JSON.parse(itemLocal);
-    }
-    else {
-      localStorage.setItem(item, JSON.stringify({}));
-      return JSON.parse(localStorage.getItem(item));
-    }
-  };
-
-  factory.addLocalStorage = function(item, object) {
-    var itemLocal = this.getLocalStorage(item);
-    console.log(itemLocal);
-    itemLocal[object.id] = object;
-    localStorage.setItem(item, JSON.stringify(itemLocal));
-  };
-
-  return factory;
-
-}])
 

@@ -16,4 +16,7 @@
 //= require angular.min
 //= require angular-route.min
 //= require app
+//= require factories/localstorage-factories
+//= require factories/scenarios-factories
+//= require factories/heroes-factories
 //= require controllers/controllers
