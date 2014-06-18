@@ -21,7 +21,7 @@
 //= require factories/heroes-factories
 //= require controllers/splashController
 //= require controllers/introController
-//= require controllers/introHeroesController
+//= require controllers/indexHeroesController
 //= require controllers/showHeroController
 //= require controllers/playGameController
 //= require controllers/endGameController

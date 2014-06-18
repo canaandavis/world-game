@@ -16,5 +16,13 @@
   #continue-button {
     font-size: 3rem;
     text-align: right;
+    cursor: pointer;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: $light-blue;
+      }
+    }
   }
 }

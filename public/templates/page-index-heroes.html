@@ -1,3 +1,45 @@
-<div ng-repeat="hero in heroes">
+<!-- <div ng-repeat="hero in heroes">
   {{hero.id}} | {{hero.name}}
+</div> -->
+
+<!--  Main Page Container -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+    <!-- Row for Team and Selection -->
+        <div class="row small">
+          <div class="col-md-offset-2 col-md-8 team">
+            <div class="hero-box" style="background-image: url('./images/{{heroes[0].id}}.jpg')"></div>
+
+            <div class="hero-box" style="background-image: url('./images/{{heroes[1].id}}.jpg')"></div>
+
+            <div class="hero-box" style="background-image: url('./images/{{heroes[2].id}}.jpg')"></div>
+
+            <div class="hero-box" style="background-image: url('./images/{{heroes[3].id}}.jpg')"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div ng-repeat="hero in heroes" class="hero-holders">
+              <a href="#/show/{{hero.id}}">
+                <div class="hero-box select" style="background-image: url(./images/{{hero.id}}.jpg)" >
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="row">
+        <div class="tee"></div>
+      </div>
+      <div class="row">
+        <div class="teee"></div>
+      </div>
+    </div>
+  </div>
 </div>

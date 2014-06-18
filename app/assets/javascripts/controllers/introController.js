@@ -10,7 +10,6 @@ heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routePa
   console.log(id);
   ScenariosFactory.getScenario(id).then(function(request){
     $rootScope.scenario = request.data;
-    console.log(request.data.local)
 
     if (!$rootScope.scenario.local) {
       console.log('hi');

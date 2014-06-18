@@ -15,4 +15,6 @@
  *= require main
  *= require view-styles/pageSplash
  *= require view-styles/pageIntro
+ *= require view-styles/pageIntro
+ *= require view-styles/pageIndexHeroes
  */

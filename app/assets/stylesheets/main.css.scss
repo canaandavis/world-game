@@ -7,11 +7,15 @@
   font-style: normal;
 }
 
+body {
+  background-color: #000;
+}
+
 
 .page {
-  background: #000 url('city.gif');
+  background: url('city.gif');
   bottom: 0;
-  padding-top: 200px;
+  padding-top: 100px;
   position: absolute;
   text-align: center;
   top: 0;
