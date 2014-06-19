@@ -49,8 +49,11 @@ local? : {{hero.local}} -->
     </div>
     <div class="row">
       <div class="col-md-offset-4 col-md-7">
-        <div class="hero-button">
+        <div class="hero-button" ng-click="addHeroToTeam()" ng-if="!confirmIfHero(hero);">
           Add
+        </div>
+        <div class="hero-button" ng-click="addHeroToTeam()" ng-if="confirmIfHero(hero);">
+          Remove
         </div>
       </div>
     </div>

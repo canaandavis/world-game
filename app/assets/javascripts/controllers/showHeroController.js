@@ -1,13 +1,25 @@
 // Show singel hero controller
 
 heroesApp.controller('showHeroController',
-  ['$scope', '$routeParams', 'HeroFactory',
+  ['$scope', '$routeParams', 'HeroFactory', 'HeroesFactory',
   'LocalStorageFactory',
-  function($scope, $routeParams, HeroFactory,
+  function($scope, $routeParams, HeroFactory, HeroesFactory,
     LocalStorageFactory){
 
     $scope.pageClass = "pageHeroeShow";
     $scope.params = $routeParams;
+
+    $scope.addHeroToTeam = function() {
+      HeroesFactory.addToTeam($scope.hero);
+    };
+
+    $scope.confirmIfHero = function(hero){
+      HeroesFactory.onTeam(hero.id);
+    };
+
+    $scope.removeHeroFromTeam = function(hero){
+      HeroesFactory.removeFromTeam(hero.id);
+    };
 
     // Return Hero
 
@@ -84,7 +96,5 @@ heroesApp.controller('showHeroController',
       var ctx = document.getElementById("dexterity").getContext("2d");
       new Chart(ctx).Doughnut(dexterityData);
     });
-
-
 
 }]);

@@ -12,13 +12,9 @@
     <!-- Row for Team and Selection -->
         <div class="row small">
           <div class="col-md-offset-2 col-md-8 team">
-            <div class="hero-box" style="background-image: url('./images/{{team[0].id}}.jpg')"></div>
-
-            <div class="hero-box" style="background-image: url('./images/{{team[1].id}}.jpg')"></div>
-
-            <div class="hero-box" style="background-image: url('./images/{{team[2].id}}.jpg')"></div>
-
-            <div class="hero-box" style="background-image: url('./images/{{team[3].id}}.jpg')"></div>
+            <div class="team-box">
+              <div class="hero-box" ng-repeat="teamMember in team" style="background-image: url(./images/{{teamMember.id}}.jpg)" ng-click="removeHero(teamMember.id)"></div>
+            </div>
           </div>
         </div>
 
@@ -38,10 +34,18 @@
 
     <div class="col-md-4">
       <div class="row">
-        <div class="tee"></div>
+        <div class="team-stats">
+          <span id="stats-header">Team Stats</span>
+          <span class="stats">Strength: {{teamStrength}}%</span>
+          <span class="stats">Intellect: {{teamIntellect}}%</span>
+          <span class="stats">Agility: {{teamAgility}}%</span>
+          <span class="stats">Dexterity: {{teamDexterity}}%</span>
+        </div>
       </div>
       <div class="row">
-        <div class="teee"></div>
+        <div class="start-box">
+          START
+        </div>
       </div>
     </div>
   </div>

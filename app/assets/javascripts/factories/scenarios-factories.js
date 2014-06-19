@@ -26,5 +26,11 @@ heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function(
     scenario = data;
     console.log(data);
   }
+
+  factory.resolveScenarioLocal = function(scenario){
+    if (!scenario.local) {
+      LocalStorageFactory.addLocalStorage('scenarios', scenario);
+    }
+  }
   return factory;
 }]);

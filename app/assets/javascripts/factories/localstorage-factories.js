@@ -1,6 +1,6 @@
 // Factory to return localStorage item
 
-heroesApp.factory('LocalStorageFactory', ['$q', function($q){
+heroesApp.factory('LocalStorageFactory', ['$q', function($q, ScenariosFactory){
   factory = {};
 
   factory.getLocalStorage = function(item) {

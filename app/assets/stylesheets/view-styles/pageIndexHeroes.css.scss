@@ -5,16 +5,40 @@
     margin-top: 0;
     margin-bottom: 2rem;
   }
+  .team-stats {
+    border: 3px solid $light-blue;
+    background-color: $opaque-black;
+    min-height: 27rem;
+    padding: 2rem;
+    span {
+      &#stats-header {
+        display: block;
+        font-size: 3rem;
+      }
+      &.stats {
+        margin-top: 2rem;
+        display: block;
+        font-size: 1.6rem;
+      }
+    }
+  }
 }
 
-.tee {
-  background-color: $primary-pink;
-  height: 30rem;
-}
-
-.teee {
-  background-color: $primary-purple;
-  height: 15rem;
+.start-box {
+  border: 3px solid $light-blue;
+  background-color: $opaque-black;
+  height: 10rem;
+  margin-top: 4rem;
+  font-size: 5rem;
+  padding-top: 1.6rem;
+  cursor: pointer;
+  &:hover {
+    color: $light-blue;
+  }
+  &:active {
+    color: white;
+    background-color: $primary-pink;
+  }
 }
 
 .hero-holders {
@@ -38,4 +62,13 @@
       opacity: 1;
     }
   }
+}
+
+.team-box {
+  min-height: 17rem;
+  width: 100%;
+  border: 3px solid $light-blue;
+  background-color: $opaque-black;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }

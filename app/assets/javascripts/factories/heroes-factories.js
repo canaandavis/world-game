@@ -2,10 +2,44 @@
 
 heroesApp.factory('HeroesFactory', ['$http', function($http){
   factory = {};
+  var team = [];
+
+  var locateHero = function(id){
+    for (var i in team) {
+      if (team[i].id === id) {
+        return i
+      }
+    }
+    return false;
+  };
+  factory.onTeam = function(id){
+    if(locateHero(id)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
   factory.getHeroes = function(){
     var request = $http.get('/api/heroes');
     return request;
-  }
+  };
+  factory.getTeam = function(){
+    return team;
+  };
+  factory.addToTeam = function(data){
+    if (team.length < 4 && !locateHero(data.id)) {
+      team.push(data);
+    }
+  };
+  factory.removeFromTeam = function(id){
+    var index = locateHero(id);
+    console.log(index);
+    if (index) {
+      team.splice(index, 1);
+    }
+  };
+
   return factory;
 }]);
 

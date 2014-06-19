@@ -1,6 +1,6 @@
 // Intro Page Controller
 
-heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routeParams', '$rootScope', 'LocalStorageFactory', function($scope, ScenariosFactory, $routeParams, $rootScope, LocalStorageFactory){
+heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routeParams', 'LocalStorageFactory', function($scope, ScenariosFactory, $routeParams, $rootScope, LocalStorageFactory){
   $scope.pageClass = "pageIntro";
   $scope.params = $routeParams;
 
@@ -11,11 +11,8 @@ heroesApp.controller('introController', ['$scope', 'ScenariosFactory', '$routePa
   ScenariosFactory.getScenario(id).then(function(request){
     ScenariosFactory.setScenario(request.data);
     $scope.scenario = ScenariosFactory.currentScenario();
-
-    if (!$rootScope.scenario.local) {
-      console.log('hi');
-      LocalStorageFactory.addLocalStorage('scenarios', $rootScope.scenario);
-    }
+    var scenario = $scope.scenario;
+    ScenariosFactory.resolveScenarioLocal(scenario);
   });
 
 }]);
