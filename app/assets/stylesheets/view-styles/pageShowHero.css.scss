@@ -1,0 +1,49 @@
+@import "../_colors";
+
+.show-page {
+  border: 4px solid $primary-pink;
+  background-color: $opaque-black;
+  padding: 5rem;
+  .hero-box {
+    height: 25rem;
+    width: 18rem;
+    border-color: $light-blue;
+  }
+  .hero-name {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 1rem;
+  }
+  .hero-quote {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+  .hero-chart {
+    display: inline-block;
+    width: 20rem;
+    margin-bottom: 4rem;
+  }
+  canvas {
+    margin-bottom: 2rem;
+  }
+
+  .hero-button {
+    display: inline-block;
+    height: 4.75rem;
+    width: 27rem;
+    border: 3px solid $primary-purple;
+    background-color: $opaque-black;
+    font-size: 2.5rem;
+    padding-top: .5rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    &:hover {
+      color: $light-blue;
+    }
+  }
+}

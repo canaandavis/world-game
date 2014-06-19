@@ -19,6 +19,72 @@ heroesApp.controller('showHeroController',
         console.log('hi');
         LocalStorageFactory.addLocalStorage('heroes', $scope.hero);
       }
+
+      // Strength Chart
+
+      var strengthData = [
+        {
+          value: $scope.hero.strength,
+          color:"#fa2bfb"
+        },
+        {
+          value : (100 - $scope.hero.strength),
+          color : "#fff"
+        },
+
+      ]
+      var ctx = document.getElementById("strength").getContext("2d");
+      new Chart(ctx).Doughnut(strengthData);
+
+      // Intellect Chart
+
+      var intellectData = [
+        {
+          value: $scope.hero.intellect,
+          color:"#bb37f7"
+        },
+        {
+          value : (100 - $scope.hero.intellect),
+          color : "#fff"
+        },
+
+      ]
+      var ctx = document.getElementById("intellect").getContext("2d");
+      new Chart(ctx).Doughnut(intellectData);
+
+      // Agility Chart
+
+      var agilityData = [
+        {
+          value: $scope.hero.agility,
+          color:"#102fe2"
+        },
+        {
+          value : (100 - $scope.hero.agility),
+          color : "#fff"
+        },
+
+      ]
+      var ctx = document.getElementById("agility").getContext("2d");
+      new Chart(ctx).Doughnut(agilityData);
+
+      // Dexterity Chart
+
+      var dexterityData = [
+        {
+          value: $scope.hero.dexterity,
+          color:"#72bbf9"
+        },
+        {
+          value : (100 - $scope.hero.dexterity),
+          color : "#fff"
+        },
+
+      ]
+      var ctx = document.getElementById("dexterity").getContext("2d");
+      new Chart(ctx).Doughnut(dexterityData);
     });
+
+
 
 }]);

@@ -2,6 +2,7 @@
 
 heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function($http, LocalStorageFactory){
   factory = {};
+  var scenario = false;
   factory.getScenarios = function(){
     var request = $http.get('/api/scenarios');
     return request;
@@ -17,5 +18,8 @@ heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function(
       return request;
     }
   };
+  factory.currentScenario = function(id) {
+    return scenario;
+  }
   return factory;
 }]);
