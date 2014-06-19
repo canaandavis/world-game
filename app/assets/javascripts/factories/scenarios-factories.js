@@ -18,8 +18,13 @@ heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function(
       return request;
     }
   };
-  factory.currentScenario = function(id) {
+  factory.currentScenario = function() {
     return scenario;
+  }
+
+  factory.setScenario = function(data){
+    scenario = data;
+    console.log(data);
   }
   return factory;
 }]);
