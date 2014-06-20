@@ -48,12 +48,16 @@ local? : {{hero.local}} -->
             Dexterity
           </div>
 
-          <div class="hero-button bottom" ng-click="addHeroToTeam()" ng-if="!confirmIfHero(hero);">
-            Add
-          </div>
-          <div class="hero-button bottom" ng-click="removeHeroFromTeam(hero)" ng-if="confirmIfHero(hero);">
-              Remove
-          </div>
+          <a href="#/index">
+            <div class="hero-button bottom" ng-click="addHeroToTeam()" ng-if="!confirmIfHero(hero);">
+              Add
+            </div>
+          </a>
+          <a href="#/index">
+            <div class="hero-button bottom" ng-click="removeHeroFromTeam(hero)" ng-if="confirmIfHero(hero);">
+                Remove
+            </div>
+          </a>
 
 
         </div>

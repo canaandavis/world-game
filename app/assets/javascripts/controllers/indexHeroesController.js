@@ -1,6 +1,6 @@
 // Index Heros Controller
 
-heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', '$rootScope', function($scope, HeroesFactory, $rootScope){
+heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', '$rootScope', '$location', function($scope, HeroesFactory, $rootScope, $location){
   $scope.pageClass = "pageHeroesIndex";
 
   // Return list of all heroes
@@ -16,7 +16,20 @@ heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', '$root
       $scope.team = HeroesFactory.getTeam();
     }
     updateTeamStats($scope.team);
-  }
+  };
+
+  $scope.addHero = function(hero){
+    console.log("dbl");
+    if(hero) {
+      HeroesFactory.addToTeam(hero);
+      $scope.team = HeroesFactory.getTeam();
+    }
+    updateTeamStats($scope.team);
+  };
+
+  $scope.showHeroPage = function(path){
+    $location.path(path);
+  };
 
   var updateTeamStats = function(team) {
     $scope.teamStrength = 0;

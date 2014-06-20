@@ -20,11 +20,11 @@
 
         <div class="row">
           <div class="col-md-12">
-            <div ng-repeat="hero in heroes" class="hero-holders">
-              <a href="#/show/{{hero.id}}">
-                <div class="hero-box select" style="background-image: url(./images/{{hero.id}}.jpg)" >
+            <div ng-repeat="hero in heroes" class="hero-holders" ng-dblclick="addHero(hero)">
+              <!-- <a href="#/show/{{hero.id}}"> -->
+                <div ng-click="showHeroPage('/show/' + hero.id)" ng-dblclick="addHero(hero)"  class="hero-box select" style="background-image: url(./images/{{hero.id}}.jpg)" >
                 </div>
-              </a>
+              <!-- </a> -->
 
             </div>
           </div>
