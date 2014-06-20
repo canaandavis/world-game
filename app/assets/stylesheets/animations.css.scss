@@ -46,6 +46,12 @@
   animation:slideOutDown 0.5s both ease-in;
 }
 
+.page.pagePlayGame.ng-leave {
+    -webkit-animation:slideOutLeft 4s both ease-in;
+  -moz-animation:slideOutLeft 4s both ease-in;
+  animation:slideOutLeft 4s both ease-in;
+}
+
 
 /* slide in from the right */
 @keyframes slideInRight {

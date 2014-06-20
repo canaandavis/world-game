@@ -39,6 +39,9 @@ heroesApp.factory('HeroesFactory', ['$http', function($http){
       team.splice(index, 1);
     }
   };
+  factory.resetTeam = function(){
+    team = [];
+  };
 
   return factory;
 }]);

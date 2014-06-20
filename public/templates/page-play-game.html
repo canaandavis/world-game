@@ -4,24 +4,44 @@
       <div class="row">
         <div class="col-md-offset-2 col-md-8">
           <div class="endgame" ng-if="playGame()">
-            WIN
+            <p>
+            It was a bloody battle.  Many innocent lives were lost.
+            </p><br>
+
+            <p>
+            Though, in the end <span id="hero1">{{team[0].name}}</span>, <span id="hero2">{{team[1].name}}</span>, <span id="hero3">{{team[2].name}}</span> and <span id="hero4">{{team[3].name}}</span> saved the world from the <span>{{scenario.name}}</span>
+            </p><br>
+
+            <p>
+            It's only a matter of time now before there is another threate, on the brink of destroying the world as we know it.
+            </p><br>
+
+            <p>
+            God save us all....
+            </p><br>
+            <span id="playAgain">
+              <a href="#/splash">Play Again</a>
+            </span>
           </div>
           <div class="endgame" ng-if="!playGame()">
             <p>
             It was a hard fought battle.  There was much bloodshed, many lives lost.
-            </p>
+            </p><br>
 
             <p>
             Though, in the end <span id="hero1">{{team[0].name}}</span>, <span id="hero2">{{team[1].name}}</span>, <span id="hero3">{{team[2].name}}</span> and <span id="hero4">{{team[3].name}}</span> failed to save the world.
-            </p>
+            </p><br>
 
             <p>
-            We must now all pledge alligence to our new overloards <span>{{scenario.name}}</span>
-            </p>
+            We must now all pledge alligence to our new overloards the <span>{{scenario.name}}</span>
+            </p><br>
 
             <p>
             God save us all....
-            </p>
+            </p><br>
+              <span id="playAgain">
+                <a href="#/splash">Play Again</a>
+              </span>
           </div>
         </div>
       </div>
