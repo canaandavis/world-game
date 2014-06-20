@@ -25,6 +25,7 @@ heroesApp.controller('showHeroController',
     // Return Hero
 
     var id = $routeParams.id;
+    var chartOptions = {animateRotate : false};
     HeroFactory.getHero(id).then(function(request){
       $scope.hero = request.data;
 
@@ -47,7 +48,7 @@ heroesApp.controller('showHeroController',
 
       ]
       var ctx = document.getElementById("strength").getContext("2d");
-      new Chart(ctx).Doughnut(strengthData);
+      new Chart(ctx).Doughnut(strengthData, chartOptions);
 
       // Intellect Chart
 
@@ -63,7 +64,7 @@ heroesApp.controller('showHeroController',
 
       ]
       var ctx = document.getElementById("intellect").getContext("2d");
-      new Chart(ctx).Doughnut(intellectData);
+      new Chart(ctx).Doughnut(intellectData, chartOptions);
 
       // Agility Chart
 
@@ -79,7 +80,7 @@ heroesApp.controller('showHeroController',
 
       ]
       var ctx = document.getElementById("agility").getContext("2d");
-      new Chart(ctx).Doughnut(agilityData);
+      new Chart(ctx).Doughnut(agilityData, chartOptions);
 
       // Dexterity Chart
 
@@ -95,7 +96,7 @@ heroesApp.controller('showHeroController',
 
       ]
       var ctx = document.getElementById("dexterity").getContext("2d");
-      new Chart(ctx).Doughnut(dexterityData);
+      new Chart(ctx).Doughnut(dexterityData, chartOptions);
     });
 
 }]);
