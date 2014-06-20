@@ -6,56 +6,58 @@ Intellect: {{hero.intellect}}<br>
 Dexterity: {{hero.dexterity}}<br>
 local? : {{hero.local}} -->
 
-<div class="container show-page">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="hero-button">
-          <a href="#/index">BACK</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10 show-page">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="hero-button top">
+            <a href="#/index">back</a>
+          </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-offset-1 col-md-3">
+          <div class="hero-box" style="background-image: url('./images/{{hero.id}}.jpg')"></div>
+          <div class="hero-name">
+            {{hero.name}}
+          </div>
+          <div class="hero-quote">
+            {{hero.quote}}
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="hero-chart">
+            <canvas id="strength" width="130" height="130"></canvas>
+            Strength
+          </div>
+
+          <div class="hero-chart">
+            <canvas id="intellect" width="130" height="130"></canvas>
+            Intellect
+          </div>
+
+          <div class="hero-chart bottom">
+            <canvas id="agility" width="130" height="130"></canvas>
+            Agility
+          </div>
+
+          <div class="hero-chart bottom">
+            <canvas id="dexterity" width="130" height="130"></canvas>
+            Dexterity
+          </div>
+
+          <div class="hero-button bottom" ng-click="addHeroToTeam()" ng-if="!confirmIfHero(hero);">
+            Add
+          </div>
+          <div class="hero-button bottom" ng-click="removeHeroFromTeam(hero)" ng-if="confirmIfHero(hero);">
+              Remove
+          </div>
+
+
+        </div>
+
     </div>
-
-    <div class="row">
-      <div class="col-md-offset-1 col-md-3">
-        <div class="hero-box" style="background-image: url('./images/{{hero.id}}.jpg')"></div>
-        <div class="hero-name">
-          {{hero.name}}
-        </div>
-        <div class="hero-quote">
-          {{hero.quote}}
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="hero-chart">
-          <canvas id="strength" width="130" height="130"></canvas>
-          Strength
-        </div>
-
-        <div class="hero-chart">
-          <canvas id="intellect" width="130" height="130"></canvas>
-          Intellect
-        </div>
-
-        <div class="hero-chart">
-          <canvas id="agility" width="130" height="130"></canvas>
-          Agility
-        </div>
-
-        <div class="hero-chart">
-          <canvas id="dexterity" width="130" height="130"></canvas>
-          Dexterity
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-offset-4 col-md-7">
-        <div class="hero-button" ng-click="addHeroToTeam()" ng-if="!confirmIfHero(hero);">
-          Add
-        </div>
-        <div class="hero-button" ng-click="addHeroToTeam()" ng-if="confirmIfHero(hero);">
-          Remove
-        </div>
-      </div>
-    </div>
-
+  </div>
 </div>

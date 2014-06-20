@@ -15,6 +15,7 @@
 
 //= require angular.min
 //= require angular-route.min
+//= require angular-animate.min
 //= require Chart.min
 //= require app
 //= require factories/localstorage-factories

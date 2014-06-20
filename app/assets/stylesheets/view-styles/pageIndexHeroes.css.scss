@@ -24,6 +24,16 @@
   }
 }
 
+a {
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
+
 .start-box {
   border: 3px solid $light-blue;
   background-color: $opaque-black;

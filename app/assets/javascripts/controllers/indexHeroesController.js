@@ -27,7 +27,7 @@ heroesApp.controller('indexHeroesController', ['$scope', 'HeroesFactory', '$root
     if (team.length > 0) {
       for (var i in team) {
         $scope.teamStrength += team[i].strength;
-        $scope.teamIntellect += team[i].strength;
+        $scope.teamIntellect += team[i].intellect;
         $scope.teamAgility += team[i].agility;
         $scope.teamDexterity += team[i].dexterity;
       }

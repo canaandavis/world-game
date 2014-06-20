@@ -1,9 +1,9 @@
-var heroesApp = angular.module('heroesApp', ['ngRoute']);
+var heroesApp = angular.module('heroesApp', ['ngAnimate', 'ngRoute']);
 
-heroesApp.run(['$rootScope',function($rootScope){
-  $rootScope.scenario = false,
-  $rootScope.team = [];
-}]);
+// heroesApp.run(['$rootScope',function($rootScope){
+//   $rootScope.scenario = false,
+//   $rootScope.team = [];
+// }]);
 
 heroesApp.config(function($routeProvider){
   $routeProvider
@@ -36,10 +36,6 @@ heroesApp.config(function($routeProvider){
       controller: 'splashController'
     })
 });
-
-heroesApp.controller('masterController',
-  ['heroesApp', '$scope', 'ScenariosFactory','$routeParams'
-  , '$rootScope', 'LocalStorageFactory', 'HeroFactory']);
 
 
 

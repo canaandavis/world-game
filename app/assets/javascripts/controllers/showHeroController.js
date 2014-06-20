@@ -6,7 +6,7 @@ heroesApp.controller('showHeroController',
   function($scope, $routeParams, HeroFactory, HeroesFactory,
     LocalStorageFactory){
 
-    $scope.pageClass = "pageHeroeShow";
+    $scope.pageClass = "pageHeroShow";
     $scope.params = $routeParams;
 
     $scope.addHeroToTeam = function() {
@@ -14,7 +14,8 @@ heroesApp.controller('showHeroController',
     };
 
     $scope.confirmIfHero = function(hero){
-      HeroesFactory.onTeam(hero.id);
+      console.log(hero.id);
+      return HeroesFactory.onTeam(hero.id);
     };
 
     $scope.removeHeroFromTeam = function(hero){
