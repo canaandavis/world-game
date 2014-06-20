@@ -7,7 +7,21 @@
             WIN
           </div>
           <div class="endgame" ng-if="!playGame()">
-            LOSE
+            <p>
+            It was a hard fought battle.  There was much bloodshed, many lives lost.
+            </p>
+
+            <p>
+            Though, in the end <span id="hero1">{{team[0].name}}</span>, <span id="hero2">{{team[1].name}}</span>, <span id="hero3">{{team[2].name}}</span> and <span id="hero4">{{team[3].name}}</span> failed to save the world.
+            </p>
+
+            <p>
+            We must now all pledge alligence to our new overloards <span>{{scenario.name}}</span>
+            </p>
+
+            <p>
+            God save us all....
+            </p>
           </div>
         </div>
       </div>

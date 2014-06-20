@@ -43,14 +43,17 @@
         </div>
       </div>
       <div class="row">
-        <a href="#/play">
-          <div class="start-box">
-            START
-          </div>
-        </a><br>
-        <span ng-if="team.length < 4">
+        <div class="display-box" ng-if="team.length < 4">
+          <span class="select">
           * Select {{4 - team.length}} more players
-        </span>
+          </span>
+        </div>
+          <a href="#/play" ng-if="team.length === 4">
+            <div class="start-box">
+              START
+            </div>
+          </a>
+
       </div>
     </div>
   </div>

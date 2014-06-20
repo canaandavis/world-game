@@ -34,14 +34,17 @@ a {
   }
 }
 
-.start-box {
+.start-box, .display-box {
   border: 3px solid $light-blue;
   background-color: $opaque-black;
   height: 10rem;
   margin-top: 4rem;
+  cursor: pointer;
+}
+
+.start-box {
   font-size: 5rem;
   padding-top: 1.6rem;
-  cursor: pointer;
   &:hover {
     color: $light-blue;
   }
@@ -49,6 +52,12 @@ a {
     color: white;
     background-color: $primary-pink;
   }
+}
+
+.display-box {
+  padding-top: 4rem;
+  cursor: default;
+  font-size: 1.3rem;
 }
 
 .hero-holders {
@@ -82,3 +91,4 @@ a {
   padding-top: 1rem;
   padding-left: 1rem;
 }
+

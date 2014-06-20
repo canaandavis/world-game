@@ -48,6 +48,9 @@
       &:hover {
         color: $light-blue;
       }
+      &:active {
+        color: $primary-pink;
+      }
     }
     &.bottom {
       &:active {

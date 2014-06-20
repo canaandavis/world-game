@@ -1,0 +1,23 @@
+@import "../_colors";
+
+.endgame {
+  border: 3px solid $primary-pink;
+  background-color: $opaque-black;
+  font-size: 2.2rem;
+  padding: 5rem;
+  span {
+    color: $primary-green;
+  }
+  #hero1 {
+    color: $primary-pink;
+  }
+  #hero2 {
+    color: $primary-purple;
+  }
+  #hero3 {
+    color: $primary-blue;
+  }
+  #hero4 {
+    color: $light-blue;
+  }
+}
