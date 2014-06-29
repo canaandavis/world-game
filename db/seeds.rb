@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Scenario.create([{name: "Zombie Dinosaurs", weakness: "strength"}, {name: "Killer Space Clowns", weakness: "agility"}, { name: "Ghost Army", weakness: "intellect" }, { name: "Sharks with Lasers", weakness: "dexterity" }]);
