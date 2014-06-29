@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'Press2Play';
-  src: url('PressStart2P-Regular.ttf');
+  src: font-url('PressStart2P-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   background-color: #000;
-  background: url('city.gif');
+  background: image-url('city.gif');
 }
 
 
