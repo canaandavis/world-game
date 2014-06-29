@@ -21,5 +21,6 @@ module WorldGame
     # config.i18n.default_locale = :de
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.serve_static_assets = true
   end
 end
