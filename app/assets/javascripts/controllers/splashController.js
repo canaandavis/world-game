@@ -6,5 +6,5 @@ heroesApp.controller('splashController', ['$scope', 'ScenariosFactory', 'HeroesF
     $scope.scenarios = request.data;
     $scope.scenarioId = false;
     HeroesFactory.resetTeam();
-  })
+  });
 }]);

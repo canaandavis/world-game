@@ -20,17 +20,17 @@ heroesApp.factory('ScenariosFactory', ['$http', 'LocalStorageFactory', function(
   };
   factory.currentScenario = function() {
     return scenario;
-  }
+  };
 
   factory.setScenario = function(data){
     scenario = data;
     console.log(data);
-  }
+  };
 
   factory.resolveScenarioLocal = function(scenario){
     if (!scenario.local) {
       LocalStorageFactory.addLocalStorage('scenarios', scenario);
     }
-  }
+  };
   return factory;
 }]);

@@ -12,11 +12,11 @@ heroesApp.controller('playGameController', ['$scope', 'HeroesFactory', 'Scenario
     var weakness = $scope.scenario.weakness;
     for (var i in $scope.team) {
       $scope.weakness += $scope.team[i][weakness];
-    }
+    };
     if ($scope.weakness > 350) {
       for (var i = 0; i < 35; i ++){
        $scope.score += Math.floor((Math.random() * 10) + 1);
-      }
+      };
     }
     else if ($scope.weakness > 300) {
       for (var i = 0; i < 25; i ++){
@@ -32,7 +32,7 @@ heroesApp.controller('playGameController', ['$scope', 'HeroesFactory', 'Scenario
       for (var i = 0; i < 10; i ++){
        $scope.score += Math.floor((Math.random() * 10) + 1);
       }
-    }
+    };
 
   })();
 
@@ -43,9 +43,7 @@ heroesApp.controller('playGameController', ['$scope', 'HeroesFactory', 'Scenario
     else {
       return false;
     }
-  }
-
-
+  };
 
 
 }]);

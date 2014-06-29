@@ -19,7 +19,7 @@ heroesApp.factory('HeroesFactory', ['$http', function($http){
     else {
       return false;
     }
-  }
+  };
   factory.getHeroes = function(){
     var request = $http.get('/api/heroes');
     return request;
@@ -64,6 +64,6 @@ heroesApp.factory('HeroFactory', ['$http', 'LocalStorageFactory', function($http
       var request = $http.get('/api/heroes/' + id);
       return request;
     }
-  }
+  };
   return factory;
 }]);
