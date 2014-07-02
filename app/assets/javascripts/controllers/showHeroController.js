@@ -32,7 +32,7 @@ heroesApp.controller('showHeroController',
       if (!$scope.hero.local) {
         console.log('hi');
         LocalStorageFactory.addLocalStorage('heroes', $scope.hero);
-      };
+      }
 
       // Strength Chart
 
@@ -44,8 +44,7 @@ heroesApp.controller('showHeroController',
         {
           value : (100 - $scope.hero.strength),
           color : "#fff"
-        },
-
+        }
       ];
       var ctx = document.getElementById("strength").getContext("2d");
       new Chart(ctx).Doughnut(strengthData, chartOptions);
@@ -60,8 +59,7 @@ heroesApp.controller('showHeroController',
         {
           value : (100 - $scope.hero.intellect),
           color : "#fff"
-        },
-
+        }
       ];
       var ctx = document.getElementById("intellect").getContext("2d");
       new Chart(ctx).Doughnut(intellectData, chartOptions);
@@ -76,8 +74,7 @@ heroesApp.controller('showHeroController',
         {
           value : (100 - $scope.hero.agility),
           color : "#fff"
-        },
-
+        }
       ];
       var ctx = document.getElementById("agility").getContext("2d");
       new Chart(ctx).Doughnut(agilityData, chartOptions);
@@ -92,8 +89,7 @@ heroesApp.controller('showHeroController',
         {
           value : (100 - $scope.hero.dexterity),
           color : "#fff"
-        },
-
+        }
       ];
       var ctx = document.getElementById("dexterity").getContext("2d");
       new Chart(ctx).Doughnut(dexterityData, chartOptions);

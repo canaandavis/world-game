@@ -1,11 +1,11 @@
-var heroesApp = angular.module('heroesApp', ['ngAnimate', 'ngRoute']);
+var heroesApp = angular.module('heroesApp', ['ngRoute','ngAnimate']);
 
 // heroesApp.run(['$rootScope',function($rootScope){
 //   $rootScope.scenario = false,
 //   $rootScope.team = [];
 // }]);
 
-heroesApp.config(function($routeProvider){
+heroesApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/splash', {
       templateUrl: '../templates/page-splash.html',
@@ -34,8 +34,8 @@ heroesApp.config(function($routeProvider){
     .otherwise({
       templateUrl: '../templates/page-splash.html',
       controller: 'splashController'
-    })
-});
+    });
+}]);
 
 
 
